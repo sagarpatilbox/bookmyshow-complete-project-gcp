@@ -13,9 +13,10 @@ resource "google_storage_bucket" "bucket" {
 
 resource "google_sql_database_instance" "db" {
   name             = "bookmyshow-db"
+  deletion_protection = false
   database_version = "POSTGRES_14"
   region           = var.region
-
+  
   settings {
     tier = "db-custom-1-3840"
   }
