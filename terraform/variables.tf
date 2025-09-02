@@ -30,3 +30,9 @@ variable "db_user" {
   type        = string
   default     = "root"
 }
+
+variable "use_read_replica" {
+  description = "Whether to enable a read replica for the database"
+  type        = bool
+  default     = false
+}
