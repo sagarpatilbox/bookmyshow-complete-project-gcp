@@ -1,4 +1,4 @@
-project_id = "bookmyshow-gcp"
+project_id = "your-project-id"
 region = "asia-south1"
-app_image = "asia-south1-docker.pkg.dev/bookmyshow-gcp/bookmyshow/app:latest"
+app_image = "asia-south1-docker.pkg.dev/your-project-id/bookmyshow/app:latest"
 db_password = "ChangeMe123!"
