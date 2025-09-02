@@ -13,3 +13,20 @@ variable "network" {
   type        = string
   default     = "default"
 }
+
+variable "app_image" {
+  description = "Docker image for the Cloud Run service"
+  type        = string
+}
+
+variable "db_password" {
+  description = "Password for the Cloud SQL database"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_user" {
+  description = "Username for the Cloud SQL database"
+  type        = string
+  default     = "root"
+}
