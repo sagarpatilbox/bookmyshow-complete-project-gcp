@@ -26,5 +26,9 @@ module "mig_lb" {
   source     = "./modules/mig_lb"
   project_id = var.project_id
   region     = var.region
-  zone       = "asia-south1-a" # you can change to another zone if needed
+  zone       = "asia-south1-a"
+
+  # required args
+  network   = var.network
+  app_image = var.app_image
 }
