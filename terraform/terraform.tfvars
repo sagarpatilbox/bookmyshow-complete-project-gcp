@@ -1,6 +1,5 @@
-project_id   = "your-gcp-project-id"
-region       = "us-central1"
-network      = "default"
-app_image    = "gcr.io/your-gcp-project-id/your-app-image"
-db_password  = "your-db-password"
-db_user      = "root"
+project_id = "bookmyshow-gcp"
+region = "asia-south1"
+app_image = "asia-south1-docker.pkg.dev/bookmyshow-gcp/bookmyshow/app:latest"
+db_password = "ChangeMe123!"
+use_read_replica = true
