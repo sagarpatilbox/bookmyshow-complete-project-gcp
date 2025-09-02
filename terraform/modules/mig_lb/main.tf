@@ -33,9 +33,9 @@ resource "google_compute_region_instance_group_manager" "mig" {
 }
 
 resource "google_compute_autoscaler" "autoscaler" {
-  name   = "bookmyshow-autoscaler"
-  region = var.region
-  target = google_compute_region_instance_group_manager.mig.id
+  name   = "autoscaler"
+  zone   = var.zone
+  target = google_compute_instance_group_manager.mig.id
 
   autoscaling_policy {
     max_replicas    = 5
@@ -45,7 +45,6 @@ resource "google_compute_autoscaler" "autoscaler" {
     }
   }
 }
-
 resource "google_compute_global_address" "default" {
   name = "lb-ip"
 }
