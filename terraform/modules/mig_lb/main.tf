@@ -32,8 +32,8 @@ resource "google_compute_region_instance_group_manager" "mig" {
   target_size = 1
 }
 
-resource "google_compute_autoscaler" "autoscaler" {
-  name   = "autoscaler"
+resource "google_compute_region_autoscaler" "autoscaler" {
+  name    = "autoscaler"
   project = var.project_id
   region  = var.region
 
