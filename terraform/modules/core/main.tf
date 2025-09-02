@@ -30,10 +30,12 @@ resource "google_redis_instance" "cache" {
   region         = var.region
 }
 
+
 resource "google_vpc_access_connector" "connector" {
-  name   = "run-vpc-connector"
-  region = var.region
-  network = var.network
+  name          = "bookmyshow-connector"
+  region        = var.region
+  network       = var.network
+  ip_cidr_range = "10.8.0.0/28" # required for VPC connector
 }
 
 resource "google_cloud_run_v2_service" "service" {
