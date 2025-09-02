@@ -4,7 +4,8 @@ variable "region" {
 }
 
 variable "project_id" {
-  type = string
+  type    = string
+  default = "bookmyshow-gcp"
 }
 
 variable "vpc_name" {
