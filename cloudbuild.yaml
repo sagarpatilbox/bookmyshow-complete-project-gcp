@@ -1,21 +1,21 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', '${_IMAGE}', '-f', 'app/Dockerfile', 'app' ]
+  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/$PROJECT_ID/bookmyshow-repo/bookmyshow:$COMMIT_SHA', '-f', 'app/Dockerfile', 'app' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', '${_IMAGE}' ]
+  args: [ 'push', 'asia-south1-docker.pkg.dev/$PROJECT_ID/bookmyshow-repo/bookmyshow:$COMMIT_SHA' ]
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args:
   - run
   - deploy
   - bookmyshow-service
-  - --image=${_IMAGE}
-  - --region=${_REGION}
+  - --image=asia-south1-docker.pkg.dev/$PROJECT_ID/bookmyshow-repo/bookmyshow:$COMMIT_SHA
+  - --region=asia-south1
   - --platform=managed
   - --allow-unauthenticated
 
 images:
-- '${_IMAGE}'
+- 'asia-south1-docker.pkg.dev/$PROJECT_ID/bookmyshow-repo/bookmyshow:$COMMIT_SHA'
 
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
