@@ -4,7 +4,8 @@ resource "google_artifact_registry_repository" "repo" {
   format        = "DOCKER"
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = all
   }
 }
+
