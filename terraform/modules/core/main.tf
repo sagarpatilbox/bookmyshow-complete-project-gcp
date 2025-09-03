@@ -44,12 +44,8 @@ resource "google_vpc_access_connector" "connector" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes  = [
-      min_throughput,
-      max_throughput,
-      ip_cidr_range
-    ]
-  }
+    ignore_changes  = all
+ }
 }
 
 resource "google_cloud_run_v2_service" "service" {
