@@ -42,6 +42,4 @@ resource "google_cloud_run_service" "bookmyshow" {
   }
 }
 
-output "cloud_run_service_url" {
-  value = google_cloud_run_service.bookmyshow.status[0].url
-}
+
