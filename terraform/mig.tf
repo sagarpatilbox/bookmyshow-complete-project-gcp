@@ -1,26 +1,26 @@
 resource "google_compute_instance_template" "tmpl" {
   name         = "bookmyshow-template"
-  machine_type = "e2-medium"
+  machine_type = "e2-micro"
 
   disk {
-    source_image = "projects/cos-cloud/global/images/family/cos-stable"
-    auto_delete  = true
     boot         = true
+    auto_delete  = true
+    source_image = "debian-cloud/debian-11"
   }
 
   network_interface {
-    network = google_compute_network.vpc.id
+    # Use the self_link of your subnet created in network.tf
+    subnetwork = google_compute_subnetwork.subnet.self_link
   }
 
   metadata_startup_script = <<-EOT
     #!/bin/bash
-    set -e
-    docker-credential-gcr configure-docker
-    docker run -d -p 8080:8080 ${var.app_image}
+    apt-get update -y
+    apt-get install -y nginx
+    systemctl start nginx
   EOT
-
-  tags = ["bookmyshow-mig"]
 }
+
 
 resource "google_compute_region_instance_group_manager" "mig" {
   name               = "bookmyshow-mig"

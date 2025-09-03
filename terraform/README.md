@@ -1,4 +1,4 @@
-# BookMyShow GCP Terraform Project  
+# BookMyShow GCP Terraform Project
 
 This project provisions BookMyShow infra on GCP with Terraform.
 
