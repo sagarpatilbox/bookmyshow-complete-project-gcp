@@ -41,6 +41,15 @@ resource "google_vpc_access_connector" "connector" {
   # Required capacity settings
   min_throughput = 200  # Mbps
   max_throughput = 300  # Mbps
+
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes  = [
+      min_throughput,
+      max_throughput,
+      ip_cidr_range
+    ]
+  }
 }
 
 resource "google_cloud_run_v2_service" "service" {
