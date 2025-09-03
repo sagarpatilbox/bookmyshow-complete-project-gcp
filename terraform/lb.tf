@@ -55,3 +55,15 @@ resource "google_compute_global_forwarding_rule" "http_rule" {
   port_range = "80"
   target     = google_compute_target_http_proxy.http_proxy.self_link
 }
+resource "google_compute_health_check" "hc" {
+  name = "bookmyshow-hc"
+
+  http_health_check {
+    port = 80
+  }
+
+  check_interval_sec  = 10
+  timeout_sec         = 5
+  healthy_threshold   = 2
+  unhealthy_threshold = 2
+}

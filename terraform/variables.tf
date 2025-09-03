@@ -34,3 +34,9 @@ variable "commit_sha" {
   description = "Commit SHA or tag for the container image"
 }
 
+variable "db_password" {
+  type        = string
+  description = "Root password for Cloud SQL"
+  sensitive   = true
+}
+

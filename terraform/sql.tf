@@ -7,12 +7,11 @@ resource "google_sql_database_instance" "db" {
     tier = "db-f1-micro"
     ip_configuration {
       ipv4_enabled    = false
-      private_network = google_compute_network.vpc.id
+      private_network = google_compute_network.vpc.self_link
     }
   }
 
   deletion_protection = false
-  root_password       = "MySecurePass123"
 
   lifecycle {
     prevent_destroy = false
@@ -20,3 +19,8 @@ resource "google_sql_database_instance" "db" {
   }
 }
 
+resource "google_sql_user" "root" {
+  name     = "postgres"
+  instance = google_sql_database_instance.db.name
+  password = var.db_password
+}
