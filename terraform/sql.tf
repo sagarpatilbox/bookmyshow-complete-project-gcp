@@ -13,4 +13,9 @@ resource "google_sql_database_instance" "db" {
 
   deletion_protection = false
   root_password       = "MySecurePass123"
+
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes  = all
+  }
 }
