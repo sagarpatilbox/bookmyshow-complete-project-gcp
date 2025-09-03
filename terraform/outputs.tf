@@ -1,5 +1,5 @@
 output "cloud_run_service_url" {
-  value = google_cloud_run_v2_service.service.uri
+  value = google_cloud_run_service.bookmyshow.status[0].url
 }
 
 output "vpc_connector_name" {
@@ -13,3 +13,4 @@ output "mig_name" {
 output "lb_ip" {
   value = google_compute_global_address.ip.address
 }
+
