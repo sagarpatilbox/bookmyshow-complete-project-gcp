@@ -27,3 +27,13 @@ variable "force_destroy_bucket" {
   type    = bool
   default = false
 }
+
+variable "project_id" {
+  type        = string
+  description = "Google Cloud Project ID"
+}
+
+variable "commit_sha" {
+  type        = string
+  description = "Commit SHA or tag for the container image"
+}
