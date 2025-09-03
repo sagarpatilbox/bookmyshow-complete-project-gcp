@@ -4,7 +4,8 @@ resource "google_vpc_access_connector" "connector" {
   network = google_compute_network.vpc.name
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = all
   }
 }
+
