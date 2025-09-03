@@ -39,7 +39,7 @@ resource "google_compute_region_instance_group_manager" "mig" {
   }
 }
 
-resource "google_compute_autoscaler" "autoscaler" {
+resource "google_compute_region_autoscaler" "autoscaler" {
   name   = "bookmyshow-autoscaler"
   region = var.region
   target = google_compute_region_instance_group_manager.mig.id
