@@ -1,4 +1,4 @@
-# BookMyShow Scalability Project — Complete (GCP + Terraform + CI/CD)
+# BookMyShow Scalability Project — Complete (GCP + Terraform + CI/CD) 
 
 This repository is a complete, step-by-step project for simulating and solving scalability issues like those experienced during large ticket sales (e.g., BookMyShow / Coldplay ticket release).
 
