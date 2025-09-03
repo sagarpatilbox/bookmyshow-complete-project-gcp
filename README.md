@@ -10,7 +10,7 @@ This repository is a complete, step-by-step project for simulating and solving s
 - Diagrams (architecture + CI/CD flow)
 - `tasks.md` step-by-step task checklist with commands & Terraform snippets
 - `final_report_template.md` for submission-ready report
-
+**
 ---
 
 ## Quick start (short)
