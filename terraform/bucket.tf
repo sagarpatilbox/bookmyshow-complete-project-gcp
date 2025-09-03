@@ -3,7 +3,8 @@ resource "google_storage_bucket" "bucket" {
   location = var.region
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = all
   }
 }
+
