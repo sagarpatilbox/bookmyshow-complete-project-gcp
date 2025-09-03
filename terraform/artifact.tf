@@ -1,6 +1,6 @@
 resource "google_artifact_registry_repository" "repo" {
   location      = var.region
-  repository_id = "bookmyshow-gcp"   # ✅ match manual repo
+  repository_id = "bookmyshow-repo"   # ✅ match manual repo
   format        = "DOCKER"
 
   lifecycle {
@@ -8,5 +8,6 @@ resource "google_artifact_registry_repository" "repo" {
     ignore_changes  = all
   }
 }
+
 
 
