@@ -5,7 +5,8 @@ resource "google_redis_instance" "cache" {
   region         = var.region
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = all
   }
 }
+
